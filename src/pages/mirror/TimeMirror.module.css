@@ -1,0 +1,77 @@
+.page { display: flex; flex-direction: column; gap: 20px; animation: fadeIn 0.2s ease-out; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; }
+.title  { font-size: var(--type-h1-size); font-weight: var(--type-h1-weight); color: var(--fg-primary); }
+.sub    { font-size: 13px; color: var(--fg-secondary); margin-top: 2px; }
+.headerActions { display: flex; gap: 8px; }
+
+.selectors { display: flex; gap: 16px; align-items: flex-end; }
+
+/* Document */
+.doc { display: flex; flex-direction: column; gap: 20px; }
+.docHeader {
+  display: flex; align-items: center; gap: 16px;
+  padding-bottom: 16px; border-bottom: 2px solid var(--bg-sidebar);
+}
+.docLogoIcon {
+  width: 28px; height: 28px;
+  background: var(--bg-sidebar);
+  border-radius: 6px; display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.docLogoImg { width: 28px; height: 28px; object-fit: contain; }
+.docLogoText { font-family: var(--font-display); font-weight: 800; font-size: 16px; color: var(--bg-sidebar); }
+.docLogo { display: flex; align-items: center; gap: 6px; }
+.docTitle { font-size: 16px; font-weight: 700; color: var(--fg-primary); }
+.docSubtitle { font-size: 12px; color: var(--fg-secondary); margin-top: 2px; }
+
+.empHeader {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  background: var(--bg-app); border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+.empMeta { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--fg-primary); }
+.empMeta span strong { color: var(--fg-secondary); font-weight: 500; margin-right: 4px; }
+
+/* Mirror table */
+.mirrorTable { width: 100%; border-collapse: collapse; }
+.mirrorTable thead th {
+  padding: 9px 12px;
+  text-align: left; font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--fg-secondary); background: var(--bg-table-head);
+  border-bottom: 1px solid var(--border-default);
+}
+.mirrorTable tbody tr { border-bottom: 1px solid var(--color-neutral-100); }
+.mirrorTable tbody tr:last-child { border-bottom: none; }
+.mirrorTable tbody tr:hover { background: var(--bg-hover-row); }
+.mirrorTable td { padding: 9px 12px; font-size: 12px; }
+.mono    { font-family: var(--font-mono); font-size: 12px; color: var(--fg-primary); }
+.weekday { font-size: 11px; color: var(--fg-secondary); text-transform: capitalize; }
+.absentRow td { background: #FFF9F9; }
+.empty { text-align: center; padding: 32px; color: var(--fg-secondary); }
+
+/* Totals */
+.totals {
+  display: flex; gap: 0;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.totalItem {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 14px 8px; border-right: 1px solid var(--border-default);
+  font-size: 12px; color: var(--fg-secondary);
+}
+.totalItem:last-child { border-right: none; }
+.totalItem strong { font-size: 16px; font-family: var(--font-mono); color: var(--fg-primary); }
+
+/* Signature */
+.signature { border-top: 1px solid var(--border-default); padding-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+.sigLine { display: flex; gap: 40px; justify-content: space-around; }
+.sigBlock { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 11px; color: var(--fg-secondary); }
+.sigUnderline { width: 160px; height: 1px; background: var(--fg-secondary); }
+.sigNote { font-size: 11px; color: var(--fg-tertiary); text-align: center; }
+
+@media print {
+  .doc { box-shadow: none; border: 1px solid #ccc; }
+}

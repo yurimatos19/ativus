@@ -1,0 +1,32 @@
+.page { display: flex; flex-direction: column; gap: 20px; animation: fadeIn 0.2s ease-out; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; }
+.title  { font-size: var(--type-h1-size); font-weight: var(--type-h1-weight); color: var(--fg-primary); }
+.sub    { font-size: 13px; color: var(--fg-secondary); margin-top: 2px; }
+
+.content { display: grid; grid-template-columns: 280px 1fr; gap: 20px; }
+.typeList { display: flex; flex-direction: column; gap: 10px; }
+.typeCard {
+  display: flex; align-items: center; gap: 12px;
+  cursor: pointer; border: 2px solid transparent; transition: border-color 0.15s;
+}
+.typeSelected { border-color: var(--color-secondary) !important; }
+.typeIcon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;
+}
+.typeInfo { flex: 1; min-width: 0; }
+.typeTitle { font-size: 13px; font-weight: 600; color: var(--fg-primary); }
+.typeDesc  { font-size: 11px; color: var(--fg-secondary); margin-top: 2px; }
+.typeChev  { color: var(--fg-tertiary); flex-shrink: 0; }
+
+.panel { display: flex; flex-direction: column; gap: 16px; }
+.emptyPanel {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; height: 300px; color: var(--fg-secondary); font-size: 14px;
+}
+.filtersPanel { display: flex; flex-direction: column; gap: 14px; }
+.panelTitle  { font-size: 15px; font-weight: 600; color: var(--fg-primary); }
+.filterGrid  { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.panelActions { display: flex; gap: 8px; justify-content: flex-end; }
+.chartTitle { font-size: 15px; font-weight: 600; color: var(--fg-primary); }
+.chartSub   { font-size: 12px; color: var(--fg-secondary); margin-top: 2px; }

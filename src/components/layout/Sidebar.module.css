@@ -1,0 +1,178 @@
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--bg-sidebar);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  transition: width 0.2s ease;
+  overflow: hidden;
+  position: relative;
+}
+.collapsed { width: 60px; }
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 12px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+}
+.logoIconWrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.logoImg {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.logoText {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 17px;
+  color: #fff;
+  white-space: nowrap;
+}
+.logoSub {
+  font-size: 9px;
+  color: rgba(255,255,255,0.4);
+  white-space: nowrap;
+}
+.collapseBtn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+.collapseBtn:hover { color: rgba(255,255,255,0.8); }
+.rotated { transform: rotate(180deg); }
+
+/* Clock */
+.clock {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.clockLabel {
+  font-size: 9px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.clockTime {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-mono);
+  line-height: 1.2;
+}
+.clockDate {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 1px;
+  text-transform: capitalize;
+}
+
+/* Nav */
+.nav {
+  padding: 8px;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.nav::-webkit-scrollbar { width: 0; }
+.navGroup { display: flex; flex-direction: column; gap: 1px; margin-bottom: 4px; }
+.navGroupLabel {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  padding: 6px 10px 3px;
+}
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 2px;
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.15s;
+  position: relative;
+}
+.navItem:hover:not(.active) {
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.85);
+}
+.active {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+.activeBar {
+  position: absolute;
+  left: 0;
+  width: 3px;
+  height: 20px;
+  background: var(--color-verde-produtivo);
+  border-radius: 0 2px 2px 0;
+}
+.navIcon { flex-shrink: 0; opacity: 0.9; }
+.navLabel { white-space: nowrap; }
+
+/* User */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 12px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.userInfo { flex: 1; min-width: 0; }
+.userName {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.userRole {
+  font-size: 10px;
+  color: rgba(255,255,255,0.45);
+  white-space: nowrap;
+}
+.logoutBtn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+.logoutBtn:hover { color: #EF4444; }

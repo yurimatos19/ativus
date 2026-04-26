@@ -1,0 +1,49 @@
+.page { display: flex; flex-direction: column; gap: 20px; animation: fadeIn 0.2s ease-out; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; }
+.title  { font-size: var(--type-h1-size); font-weight: var(--type-h1-weight); color: var(--fg-primary); }
+.sub    { font-size: 13px; color: var(--fg-secondary); margin-top: 2px; }
+
+.kpiBar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.kpiCard { display: flex; align-items: center; gap: 12px; }
+.kpiVal   { font-size: 18px; font-weight: 700; font-family: var(--font-mono); color: var(--fg-primary); }
+.kpiLabel { font-size: 11px; color: var(--fg-secondary); }
+
+.filterRow { display: flex; gap: 6px; }
+.filterBtn {
+  padding: 6px 12px; border-radius: 20px; border: 1px solid var(--border-default);
+  background: var(--bg-card); font-size: 12px; color: var(--fg-secondary);
+  cursor: pointer; transition: all 0.15s;
+}
+.filterBtn:hover { border-color: var(--color-blue-tec); color: var(--color-blue-tec); }
+.filterActive { background: var(--color-blue-50); border-color: var(--color-blue-tec); color: var(--color-blue-tec); font-weight: 600; }
+
+.table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table th {
+  text-align: left; padding: 10px 12px; font-size: 11px; font-weight: 600;
+  color: var(--fg-secondary); border-bottom: 1px solid var(--border-default);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.table td { padding: 10px 12px; border-bottom: 1px solid var(--border-light); }
+.table tr:last-child td { border-bottom: none; }
+.table tr:hover td { background: var(--bg-hover); }
+
+.numCol { text-align: right; }
+.actCol { text-align: center; width: 70px; }
+
+.empCell { display: flex; align-items: center; gap: 8px; }
+.empName { font-size: 13px; font-weight: 500; color: var(--fg-primary); }
+.empRole { font-size: 11px; color: var(--fg-secondary); }
+
+.mono { font-family: var(--font-mono); font-size: 13px; }
+.balance { font-weight: 700; }
+.pos { color: #16A34A; }
+.neg { color: #EF4444; }
+
+.adjBtn {
+  padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border-default);
+  background: none; font-size: 12px; color: var(--fg-secondary); cursor: pointer;
+  transition: all 0.15s;
+}
+.adjBtn:hover { border-color: var(--color-blue-tec); color: var(--color-blue-tec); }
+
+.histTitle { font-size: 14px; font-weight: 600; color: var(--fg-primary); margin-bottom: 10px; }

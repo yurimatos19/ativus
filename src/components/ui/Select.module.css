@@ -1,0 +1,33 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg-primary);
+}
+.select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border-input);
+  border-radius: var(--radius-md);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--fg-primary);
+  background: var(--bg-input);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  appearance: auto;
+}
+.select:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(21,101,192,0.12);
+}
+.select:disabled {
+  background: var(--color-neutral-50);
+  color: var(--fg-tertiary);
+  cursor: not-allowed;
+}

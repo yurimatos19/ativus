@@ -1,0 +1,47 @@
+.page { display: flex; flex-direction: column; gap: 20px; animation: fadeIn 0.2s ease-out; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; }
+.title  { font-size: var(--type-h1-size); font-weight: var(--type-h1-weight); color: var(--fg-primary); }
+.sub    { font-size: 13px; color: var(--fg-secondary); margin-top: 2px; }
+
+.filters { }
+.filtersRow { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+.searchWrap { position: relative; flex: 1; min-width: 200px; }
+.searchIcon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--fg-tertiary); }
+.search {
+  width: 100%; padding: 10px 12px 10px 32px;
+  border: 1.5px solid var(--border-input); border-radius: var(--radius-md);
+  font-family: var(--font-ui); font-size: 13px; color: var(--fg-primary);
+  background: var(--bg-input); outline: none;
+}
+.search:focus { border-color: var(--border-focus); }
+.dateRange { display: flex; gap: 10px; }
+
+.tableWrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; min-width: 800px; }
+.table thead th {
+  padding: 10px 14px;
+  text-align: left; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--fg-secondary); background: var(--bg-table-head);
+  border-bottom: 1px solid var(--border-default);
+  white-space: nowrap;
+}
+.row { border-bottom: 1px solid var(--color-neutral-100); transition: background 0.1s; }
+.row:last-child { border-bottom: none; }
+.row:hover { background: var(--bg-hover-row); }
+.table td { padding: 10px 14px; font-size: 13px; white-space: nowrap; }
+.nameCell { display: flex; align-items: center; gap: 6px; }
+.empName  { font-size: 13px; font-weight: 500; color: var(--fg-primary); }
+.mono { font-family: var(--font-mono); font-size: 12px; }
+
+.actions { display: flex; gap: 4px; }
+.actionBtn {
+  display: flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px;
+  background: none; border: none; cursor: pointer;
+  color: var(--fg-secondary); border-radius: var(--radius-sm);
+  transition: background 0.15s, color 0.15s;
+}
+.actionBtn:hover { background: var(--color-neutral-100); color: var(--fg-primary); }
+
+.editGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }

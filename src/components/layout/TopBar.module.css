@@ -1,0 +1,102 @@
+.topbar {
+  height: var(--topbar-height);
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-xs);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.crumbHome {
+  font-size: 13px;
+  color: var(--fg-secondary);
+}
+.crumbSep { color: var(--fg-tertiary); }
+.crumbCurrent {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg-primary);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.searchWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  color: var(--fg-tertiary);
+  pointer-events: none;
+}
+.search {
+  padding: 7px 12px 7px 32px;
+  border: 1.5px solid var(--border-input);
+  border-radius: var(--radius-full);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--fg-primary);
+  background: var(--bg-app);
+  outline: none;
+  width: 220px;
+  transition: border-color 0.15s, width 0.2s;
+}
+.search:focus {
+  border-color: var(--border-focus);
+  width: 280px;
+}
+.search::placeholder { color: var(--fg-tertiary); }
+
+.notifBtn {
+  position: relative;
+  background: var(--bg-app);
+  border: 1.5px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--fg-secondary);
+  transition: background 0.15s;
+}
+.notifBtn:hover { background: var(--color-neutral-100); }
+.notifDot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 7px;
+  height: 7px;
+  background: var(--color-verde-produtivo);
+  border-radius: 50%;
+  border: 1.5px solid var(--bg-card);
+}
+
+.userChip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px 4px 4px;
+  border: 1.5px solid var(--border-default);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.userChip:hover { background: var(--color-neutral-50); }
+.userMeta { line-height: 1.2; }
+.userName { font-size: 12px; font-weight: 600; color: var(--fg-primary); }
+.userRole { font-size: 11px; color: var(--fg-secondary); }

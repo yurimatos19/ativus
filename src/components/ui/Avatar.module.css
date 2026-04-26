@@ -1,0 +1,34 @@
+.avatar {
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.text {
+  color: #fff;
+  font-weight: 700;
+  font-family: var(--font-ui);
+  line-height: 1;
+}
+
+.xs  { width: 24px; height: 24px; }
+.xs .text { font-size: 9px; }
+
+.sm  { width: 32px; height: 32px; }
+.sm .text { font-size: 11px; }
+
+.md  { width: 40px; height: 40px; }
+.md .text { font-size: 13px; }
+
+.lg  { width: 56px; height: 56px; }
+.lg .text { font-size: 18px; }
+
+.xl  { width: 80px; height: 80px; }
+.xl .text { font-size: 26px; }

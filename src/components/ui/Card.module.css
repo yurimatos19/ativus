@@ -1,0 +1,21 @@
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.dark {
+  background: var(--bg-sidebar);
+  color: var(--fg-on-dark);
+}
+.clickable {
+  cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.clickable:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+.pad-sm  { padding: var(--space-4); }
+.pad-md  { padding: var(--space-6); }
+.pad-lg  { padding: var(--space-8); }
+.pad-none { padding: 0; }

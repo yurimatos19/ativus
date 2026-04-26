@@ -1,0 +1,526 @@
+/* ── Phone Frame ─────────────────────────────────────────── */
+.phoneFrame {
+  width: 375px;
+  height: 780px;
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0 24px 80px rgba(11,35,84,0.3), 0 0 0 8px #0B2354, 0 0 0 10px #1565C0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.phoneBrow {
+  width: 120px;
+  height: 28px;
+  background: #0B2354;
+  border-radius: 0 0 16px 16px;
+  align-self: center;
+  flex-shrink: 0;
+  z-index: 10;
+  position: relative;
+}
+.phoneBrow::before {
+  content: '';
+  position: absolute;
+  top: 8px; left: 50%; transform: translateX(-50%);
+  width: 12px; height: 12px;
+  background: #0D2D6B;
+  border-radius: 50%;
+}
+
+.phoneContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.screenWrap {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.screenWrap::-webkit-scrollbar { display: none; }
+
+/* ── Generic Screen ─────────────────────────────────────── */
+.screen {
+  padding: 20px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100%;
+}
+.pageTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1A2340;
+  margin-bottom: 4px;
+}
+
+/* ── Login ──────────────────────────────────────────────── */
+.loginHero {
+  background: linear-gradient(160deg, #0B2354 0%, #1565C0 100%);
+  margin: -20px -18px 0;
+  padding: 40px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.loginLogo {
+  width: 52px; height: 52px;
+  background: #fff;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.loginLogoImg { width: 52px; height: 52px; object-fit: contain; }
+.loginLogoText {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800; font-size: 26px; color: #fff;
+}
+.loginSub { font-size: 13px; color: rgba(255,255,255,0.6); }
+.loginForm { display: flex; flex-direction: column; gap: 14px; }
+.loginTitle { font-size: 18px; font-weight: 700; color: #1A2340; }
+.loginDesc  { font-size: 13px; color: #64748B; margin-top: -8px; }
+.loginHint  { font-size: 11px; color: #94A3B8; text-align: center; }
+
+/* ── Form fields ─────────────────────────────────────────── */
+.mField { display: flex; flex-direction: column; gap: 5px; }
+.mLabel { font-size: 12px; font-weight: 600; color: #1A2340; }
+.mInput {
+  padding: 11px 14px;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #1A2340;
+  background: #fff;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+.mInput:focus { border-color: #1565C0; box-shadow: 0 0 0 3px rgba(21,101,192,0.12); }
+.mTextarea {
+  padding: 11px 14px;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #1A2340;
+  background: #fff;
+  outline: none;
+  width: 100%;
+  resize: none;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.mBtnPrimary {
+  padding: 14px;
+  background: #39B54A;
+  color: #fff;
+  border: none; border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(57,181,74,0.35);
+  transition: all 0.15s;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.mBtnPrimary:hover   { background: #2E9E3F; }
+.mBtnPrimary:active  { transform: scale(0.97); }
+.mBtnPrimary:disabled { opacity: 0.6; }
+
+.mBtnSecondary {
+  padding: 12px;
+  background: #EFF6FF;
+  color: #1565C0;
+  border: 1.5px solid #DBEAFE; border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px; font-weight: 600;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  transition: background 0.15s;
+}
+.mBtnSecondary:hover { background: #DBEAFE; }
+
+.mBtnGhost {
+  padding: 12px;
+  background: transparent;
+  color: #64748B;
+  border: 1.5px solid #E2E8F0; border-radius: 12px;
+  font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500;
+  cursor: pointer; flex: 1;
+}
+
+/* ── Home ────────────────────────────────────────────────── */
+.homeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.homeGreeting { display: flex; flex-direction: column; }
+.homeHi   { font-size: 13px; color: #64748B; }
+.homeName { font-size: 20px; font-weight: 700; color: #1A2340; line-height: 1.2; }
+.homeAvatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: #1565C0; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700;
+}
+
+.clockBlock {
+  background: #0B2354;
+  border-radius: 16px;
+  padding: 18px 20px;
+}
+.clockLabel { font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.06em; }
+.clockTime  { font-size: 36px; font-weight: 700; color: #fff; font-family: 'JetBrains Mono', monospace; line-height: 1.1; }
+.clockDate  { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; text-transform: capitalize; }
+
+.successBanner {
+  display: flex; align-items: center; gap: 8px;
+  background: #DCFCE7; color: #15803D;
+  padding: 10px 14px; border-radius: 10px;
+  font-size: 13px; font-weight: 600;
+  animation: slideUp 0.3s ease-out;
+}
+
+.punchArea {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.punchBtn {
+  width: 100%;
+  padding: 20px;
+  border: none; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.punchBtnIn     { background: #39B54A; color: #fff; box-shadow: 0 6px 20px rgba(57,181,74,0.4); }
+.punchBtnOut    { background: #EF4444; color: #fff; box-shadow: 0 6px 20px rgba(239,68,68,0.35); }
+.punchBtnLunch  { background: #F59E0B; color: #fff; box-shadow: 0 6px 20px rgba(245,158,11,0.35); }
+.punchBtnReturn { background: #1565C0; color: #fff; box-shadow: 0 6px 20px rgba(21,101,192,0.35); }
+.punchBtnIn:active, .punchBtnOut:active, .punchBtnLunch:active, .punchBtnReturn:active { transform: scale(0.97); }
+.punchLoading { opacity: 0.8; }
+.punchHint { font-size: 12px; color: #94A3B8; }
+.lastPunch { font-size: 11px; color: #94A3B8; font-style: italic; }
+
+/* 4-punch progress */
+.punchProgress {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 4px 0;
+}
+.punchProgressItem { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; }
+.punchDot {
+  width: 24px; height: 24px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700;
+  transition: all 0.2s;
+}
+.punchDotDone    { background: #39B54A; color: #fff; }
+.punchDotActive  { background: #1565C0; color: #fff; box-shadow: 0 0 0 3px rgba(21,101,192,0.25); }
+.punchDotPending { background: #E2E8F0; color: #94A3B8; }
+.punchDotLabel   { font-size: 9px; color: #94A3B8; text-align: center; font-weight: 500; }
+
+/* All done */
+.allDoneBlock { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px; }
+.allDoneTitle { font-size: 17px; font-weight: 700; color: #1A2340; }
+.allDoneTime  { font-size: 13px; color: #94A3B8; }
+
+/* Comprovante */
+.comprovante {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  padding: 24px 16px; flex: 1; overflow-y: auto;
+}
+.comprovanteCheck  { animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.comprovanteTitle  { font-size: 20px; font-weight: 800; color: #1A2340; }
+.comprovanteType   { font-size: 13px; color: #64748B; margin-top: -6px; }
+.comprovanteCard {
+  width: 100%; background: #F8FAFC; border: 1px solid #E2E8F0;
+  border-radius: 12px; padding: 12px 14px;
+  display: flex; flex-direction: column; gap: 0;
+}
+.compRow {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 7px 0; border-bottom: 1px solid #F1F5F9;
+}
+.compRow:last-child { border-bottom: none; }
+.compKey { font-size: 11px; color: #94A3B8; }
+.compVal { font-size: 12px; font-weight: 600; color: #1A2340; font-family: 'JetBrains Mono', monospace; }
+
+.compActions { display: flex; gap: 8px; width: 100%; }
+.compShareBtn, .compReqBtn {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 10px 8px; border-radius: 10px; border: 1px solid #E2E8F0;
+  background: #fff; font-size: 12px; font-weight: 600; cursor: pointer;
+  transition: all 0.15s;
+}
+.compShareBtn { color: #1565C0; }
+.compShareBtn:hover { background: #EFF6FF; border-color: #BFDBFE; }
+.compReqBtn { color: #EF4444; }
+.compReqBtn:hover { background: #FEF2F2; border-color: #FECACA; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.punchSpinner {
+  width: 24px; height: 24px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.homeCards { display: flex; flex-direction: column; gap: 8px; }
+.homeCard {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px;
+  background: #F8FAFC;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+  border: 1px solid #E2E8F0;
+}
+.homeCard:hover { background: #F1F5F9; }
+.homeCardInfo { flex: 1; }
+.homeCardLabel { font-size: 12px; color: #64748B; }
+.homeCardVal   { font-size: 14px; font-weight: 600; color: #1A2340; margin-top: 1px; }
+
+/* ── Tasks ───────────────────────────────────────────────── */
+.progressCard {
+  background: #0B2354; border-radius: 14px;
+  padding: 16px 18px; display: flex; flex-direction: column; gap: 10px;
+}
+.progressTop { display: flex; justify-content: space-between; }
+.progressLabel { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); }
+.progressPct   { font-size: 16px; font-weight: 700; color: #fff; }
+.progressBar   { height: 6px; background: rgba(255,255,255,0.15); border-radius: 3px; overflow: hidden; }
+.progressFill  { height: 100%; background: #39B54A; border-radius: 3px; transition: width 0.5s; }
+
+.taskList { display: flex; flex-direction: column; gap: 8px; }
+.taskRow {
+  display: flex; align-items: center; gap: 12px;
+  padding: 13px 14px;
+  background: #F8FAFC; border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid #E2E8F0;
+  transition: all 0.15s;
+}
+.taskDone { background: #F0FDF4; border-color: #BBF7D0; }
+.taskCheck {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 2px solid #CBD5E1; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; color: #39B54A; transition: all 0.15s;
+}
+.taskCheckDone { background: #39B54A; border-color: #39B54A; color: #fff; }
+.taskInfo  { flex: 1; cursor: pointer; }
+.taskTitle { font-size: 13px; font-weight: 500; color: #1A2340; transition: color 0.15s; }
+.taskDone .taskTitle { text-decoration: line-through; color: #94A3B8; }
+.taskTime  { font-size: 11px; color: #94A3B8; margin-top: 2px; }
+.taskRemoveBtn {
+  width: 24px; height: 24px; border-radius: 50%;
+  border: none; background: none; color: #CBD5E1;
+  font-size: 18px; line-height: 1; cursor: pointer; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.taskRemoveBtn:hover { background: #FEE2E2; color: #EF4444; }
+
+/* Add task form */
+.addTaskCard {
+  background: #F8FAFC; border: 1.5px solid #BFDBFE; border-radius: 14px;
+  padding: 14px; display: flex; flex-direction: column; gap: 10px;
+  animation: slideUp 0.2s ease-out;
+}
+.addTaskTitle { font-size: 13px; font-weight: 700; color: #1A2340; }
+
+/* ── Hours ───────────────────────────────────────────────── */
+.hoursGrid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.hoursCard {
+  background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px;
+  padding: 14px; display: flex; flex-direction: column; gap: 4px;
+}
+.hoursVal   { font-size: 20px; font-weight: 700; color: #1A2340; font-family: 'JetBrains Mono', monospace; }
+.hoursLabel { font-size: 11px; color: #64748B; }
+
+.dayList { display: flex; flex-direction: column; gap: 10px; }
+.dayListTitle { font-size: 13px; font-weight: 600; color: #1A2340; }
+.dayRow { display: flex; align-items: center; gap: 10px; }
+.dayName  { width: 28px; font-size: 12px; font-weight: 600; color: #64748B; flex-shrink: 0; }
+.dayBar   { flex: 1; height: 6px; background: #E2E8F0; border-radius: 3px; overflow: hidden; }
+.dayBarFill { height: 100%; border-radius: 3px; transition: width 0.5s; }
+.dayBarNormal  { background: #1565C0; }
+.dayBarExtra   { background: #39B54A; }
+.dayBarPartial { background: #F59E0B; }
+.dayHours { width: 42px; font-size: 11px; font-family: 'JetBrains Mono', monospace; color: #1A2340; text-align: right; flex-shrink: 0; }
+.hoursExtra { color: #15803D; }
+
+/* ── Schedule ─────────────────────────────────────────────── */
+.scheduleCard {
+  background: #0B2354; border-radius: 16px; padding: 18px;
+  display: flex; flex-direction: column; gap: 0;
+}
+.scheduleTitle { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+.scheduleDays  { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 14px; }
+.scheduleRow {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.scheduleRow:last-child { border-bottom: none; }
+.schLabel { font-size: 13px; color: rgba(255,255,255,0.6); }
+.schValue { font-size: 13px; font-weight: 600; color: #fff; font-family: 'JetBrains Mono', monospace; }
+
+/* Week strip — improved schedule screen */
+.weekStrip {
+  display: flex; gap: 4px;
+}
+.weekDay {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 8px 3px; border-radius: 10px;
+  background: #F8FAFC; border: 1px solid #E2E8F0;
+}
+.weekDayToday   { background: #EFF6FF; border-color: #BFDBFE; }
+.weekDayWeekend { opacity: 0.5; }
+.weekDayLabel   { font-size: 9px; font-weight: 700; color: #94A3B8; text-transform: uppercase; }
+.weekDayNum     { font-size: 15px; font-weight: 700; color: #1A2340; line-height: 1; }
+.weekDayNumToday {
+  width: 26px; height: 26px; background: #1565C0; color: #fff;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+}
+.weekDayDot     { width: 7px; height: 7px; border-radius: 50%; }
+.weekDayStatus  { font-size: 8px; font-weight: 700; text-align: center; }
+
+/* Today punches list */
+.todayPunches { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 14px; padding: 14px; }
+.todayPunchesTitle { font-size: 12px; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+.punchRecord {
+  display: flex; align-items: center; gap: 10px; padding: 7px 0;
+  border-bottom: 1px solid #F1F5F9;
+}
+.punchRecord:last-child { border-bottom: none; }
+.punchRecordDot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #CBD5E1; flex-shrink: 0;
+}
+.punchRecordDotDone { background: #39B54A; }
+.punchRecordLabel { font-size: 12px; color: #64748B; flex: 1; }
+.punchRecordTime  { font-size: 12px; font-weight: 700; color: #1A2340; font-family: 'JetBrains Mono', monospace; }
+.punchRecordPending { color: #CBD5E1; font-weight: 400; }
+
+/* ── Profile ─────────────────────────────────────────────── */
+.profileTop {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 10px 0 4px;
+}
+
+/* Avatar with photo upload */
+.profileAvatarWrap {
+  position: relative; width: 80px; height: 80px;
+}
+.profileAvatarLg {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: #1565C0; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; font-weight: 700;
+  box-shadow: 0 4px 16px rgba(21,101,192,0.35);
+}
+.profileAvatarImg {
+  width: 80px; height: 80px; border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.profilePhotoBtn {
+  position: absolute; bottom: 0; right: 0;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: #fff; border: 2px solid #E2E8F0;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  transition: all 0.15s;
+}
+.profilePhotoBtn:hover { background: #F8FAFC; transform: scale(1.1); }
+.cameraIcon { font-size: 12px; line-height: 1; }
+.uploadSpinner {
+  width: 12px; height: 12px;
+  border: 2px solid rgba(21,101,192,0.3);
+  border-top-color: #1565C0;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+.photoSavedBanner {
+  display: flex; align-items: center; gap: 6px;
+  background: #DCFCE7; color: #15803D; border-radius: 20px;
+  padding: 5px 12px; font-size: 12px; font-weight: 600;
+  animation: slideUp 0.3s ease-out;
+}
+
+.profileName { font-size: 18px; font-weight: 700; color: #1A2340; }
+.profileRole { font-size: 13px; color: #64748B; }
+.profileDept { font-size: 12px; color: #94A3B8; }
+
+.profileList { display: flex; flex-direction: column; gap: 0; border: 1px solid #E2E8F0; border-radius: 14px; overflow: hidden; }
+.profileRow {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #F1F5F9;
+}
+.profileRow:last-child { border-bottom: none; }
+.profileLabel { font-size: 12px; color: #64748B; }
+.profileVal   { font-size: 13px; font-weight: 500; color: #1A2340; font-family: 'JetBrains Mono', monospace; }
+
+.logoutBtn {
+  padding: 14px; background: #FEE2E2; color: #991B1B;
+  border: none; border-radius: 12px;
+  font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: background 0.15s;
+}
+.logoutBtn:hover { background: #FECACA; }
+
+/* ── Requests ─────────────────────────────────────────────── */
+.reqList { display: flex; flex-direction: column; gap: 8px; }
+.reqRow {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+  padding: 13px 14px; background: #F8FAFC; border-radius: 12px;
+  border: 1px solid #E2E8F0;
+}
+.reqLeft { display: flex; flex-direction: column; gap: 2px; }
+.reqType   { font-size: 13px; font-weight: 600; color: #1A2340; }
+.reqDate   { font-size: 11px; color: #94A3B8; font-family: 'JetBrains Mono', monospace; }
+.reqReason { font-size: 12px; color: #64748B; }
+.reqStatus {
+  padding: 4px 10px; border-radius: 999px;
+  font-size: 11px; font-weight: 600;
+  white-space: nowrap; flex-shrink: 0;
+}
+
+.newReqCard {
+  background: #F8FAFC; border: 1.5px solid #DBEAFE; border-radius: 14px;
+  padding: 16px; display: flex; flex-direction: column; gap: 12px;
+}
+.newReqTitle { font-size: 14px; font-weight: 700; color: #1A2340; }
+.newReqBtns  { display: flex; gap: 8px; }
+
+/* ── Bottom Nav ──────────────────────────────────────────── */
+.bottomNav {
+  display: flex;
+  background: #fff;
+  border-top: 1px solid #E2E8F0;
+  padding: 8px 0 4px;
+  flex-shrink: 0;
+}
+.navItem {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 6px 4px 2px;
+  border: none; background: none; cursor: pointer;
+  color: #94A3B8; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 500;
+  transition: color 0.15s;
+}
+.navItem:hover { color: #64748B; }
+.navActive { color: #1565C0; }
+.navActive svg { stroke: #1565C0; }

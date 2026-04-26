@@ -1,0 +1,52 @@
+.page { display: flex; flex-direction: column; gap: 20px; animation: fadeIn 0.2s ease-out; }
+.back {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 500; color: var(--fg-secondary);
+  background: none; border: none; cursor: pointer;
+  padding: 0; transition: color 0.15s;
+}
+.back:hover { color: var(--fg-primary); }
+
+.top { display: grid; grid-template-columns: 340px 1fr; gap: 16px; }
+.profileCard { display: flex; flex-direction: column; gap: 16px; }
+.profileHeader { display: flex; align-items: center; gap: 16px; }
+.name { font-size: 20px; font-weight: 700; color: var(--fg-primary); }
+.role { font-size: 13px; color: var(--fg-secondary); margin: 2px 0 6px; }
+
+.infos { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--border-default); padding-top: 16px; }
+.infoRow { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.infoIcon { color: var(--fg-secondary); flex-shrink: 0; }
+.infoLabel { color: var(--fg-secondary); width: 64px; flex-shrink: 0; }
+.infoValue { color: var(--fg-primary); font-weight: 500; }
+
+.deptChip { display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--border-default); padding-top: 16px; }
+.cpf { font-size: 12px; color: var(--fg-tertiary); font-family: var(--font-mono); }
+
+.statsCol { display: flex; flex-direction: column; gap: 12px; }
+.statCard { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.statLabel { font-size: 12px; font-weight: 600; color: var(--fg-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+.statVal { font-size: 32px; font-weight: 700; font-family: var(--font-mono); color: var(--fg-primary); }
+
+.tableHeader {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 20px; border-bottom: 1px solid var(--border-default);
+}
+.tableTitle { font-size: 14px; font-weight: 600; color: var(--fg-primary); }
+
+.table { width: 100%; border-collapse: collapse; }
+.table thead th {
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--fg-secondary);
+  background: var(--bg-table-head);
+  border-bottom: 1px solid var(--border-default);
+}
+.table tbody tr { border-bottom: 1px solid var(--color-neutral-100); }
+.table tbody tr:last-child { border-bottom: none; }
+.table tbody tr:hover { background: var(--bg-hover-row); }
+.table td { padding: 11px 16px; font-size: 13px; }
+.mono { font-family: var(--font-mono); font-size: 12px; color: var(--fg-primary); }
+
+.notFound { display: flex; flex-direction: column; gap: 16px; align-items: center; padding: 60px; color: var(--fg-secondary); }
