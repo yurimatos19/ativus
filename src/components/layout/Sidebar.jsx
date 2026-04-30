@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import {
   LayoutDashboard, Users, Clock, FileText, BarChart2,
   Settings, LogOut, FileBadge, CheckSquare, ChevronRight,
-  Smartphone, CalendarDays, Repeat2, ShieldCheck, Wallet, AlertTriangle, CalendarRange,
+  Smartphone, CalendarDays, Repeat2, ShieldCheck, Wallet, AlertTriangle, CalendarRange, ClipboardList,
 } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 import Avatar from '../ui/Avatar'
@@ -29,6 +29,7 @@ const NAV_GROUPS = [
     label: 'Controle',
     items: [
       { to: '/agenda',          icon: CalendarRange,   label: 'Agenda' },
+      { to: '/tarefas',         icon: ClipboardList,   label: 'Tarefas' },
       { to: '/registros',       icon: Clock,           label: 'Registros de Ponto' },
       { to: '/espelho',         icon: FileText,        label: 'Espelho de Ponto' },
       { to: '/ajustes',         icon: CheckSquare,     label: 'Ajustes' },

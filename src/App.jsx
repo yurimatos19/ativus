@@ -22,6 +22,7 @@ import Policies       from './pages/policies/Policies'
 import BankHours      from './pages/bankhours/BankHours'
 import Occurrences    from './pages/occurrences/Occurrences'
 import Agenda         from './pages/agenda/Agenda'
+import Tasks          from './pages/tasks/Tasks'
 
 // Mobile wrapper page (shows the phone emulator centered)
 function MobilePreviewPage() {
@@ -82,6 +83,7 @@ export default function App() {
               <Route path="/banco-de-horas"  element={<BankHours />} />
               <Route path="/ocorrencias"     element={<Occurrences />} />
               <Route path="/agenda"          element={<Agenda />} />
+              <Route path="/tarefas"         element={<Tasks />} />
             </Route>
 
             {/* Fallback */}

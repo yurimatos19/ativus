@@ -104,6 +104,46 @@ export const HOURS_MONTH = [
   { week: 'S4', worked: 45, target: 44 },
 ]
 
+// recurrence: null | 'diaria' | 'semanal' | 'mensal'
+// recurrenceDays: [1,3,5] = Seg,Qua,Sex (semanal only)
+// recurrenceDay: 1-31 (mensal only)
+// assigneeType: 'employee' | 'department'
+// category: string
+export const TASK_CATEGORIES = ['Administrativo','Comercial','Operacional','Segurança','Treinamento','Financeiro','TI','Marketing','RH','Logística']
+
+export const TASKS = [
+  // ── Recorrentes diárias ─────────────────────────────────────────────────────
+  { id: 1,  assigneeType: 'employee',   employeeId: 1,  department: null,       title: 'Atualizar CRM com atividades do dia',               date: '2026-04-30', time: '17:30', priority: 'high',   category: 'Comercial',     recurrence: 'diaria',  recurrenceDays: null, recurrenceDay: null, done: false, createdBy: 'Mariana Costa' },
+  { id: 2,  assigneeType: 'employee',   employeeId: 7,  department: null,       title: 'Verificar escala da equipe e confirmar presenças',   date: '2026-04-30', time: '07:30', priority: 'high',   category: 'Operacional',   recurrence: 'diaria',  recurrenceDays: null, recurrenceDay: null, done: true,  createdBy: 'Mariana Costa' },
+  { id: 3,  assigneeType: 'employee',   employeeId: 8,  department: null,       title: 'Conferir e assinar romaneio de entrada de materiais', date: '2026-04-30', time: '08:00', priority: 'medium', category: 'Logística',     recurrence: 'diaria',  recurrenceDays: null, recurrenceDay: null, done: true,  createdBy: 'Mariana Costa' },
+  { id: 4,  assigneeType: 'department', employeeId: null, department: 'Vendas', title: 'Registrar ligações do dia no sistema',                date: '2026-04-30', time: '18:00', priority: 'medium', category: 'Comercial',     recurrence: 'diaria',  recurrenceDays: null, recurrenceDay: null, done: false, createdBy: 'Mariana Costa' },
+
+  // ── Recorrentes semanais ────────────────────────────────────────────────────
+  { id: 5,  assigneeType: 'employee',   employeeId: 2,  department: null,       title: 'Enviar relatório de frequência para contabilidade',  date: '2026-04-30', time: '09:00', priority: 'high',   category: 'RH',            recurrence: 'semanal', recurrenceDays: [3],     recurrenceDay: null, done: false, createdBy: 'Mariana Costa' },
+  { id: 6,  assigneeType: 'employee',   employeeId: 4,  department: null,       title: 'Reunião de pipeline com a equipe comercial',         date: '2026-04-30', time: '14:00', priority: 'high',   category: 'Comercial',     recurrence: 'semanal', recurrenceDays: [1,4],   recurrenceDay: null, done: false, createdBy: 'Mariana Costa' },
+  { id: 7,  assigneeType: 'employee',   employeeId: 3,  department: null,       title: 'Code review dos PRs abertos no repositório',         date: '2026-04-30', time: '10:00', priority: 'medium', category: 'TI',            recurrence: 'semanal', recurrenceDays: [1,3,5], recurrenceDay: null, done: false, createdBy: 'Mariana Costa' },
+  { id: 8,  assigneeType: 'department', employeeId: null, department: 'RH',     title: 'Reunião semanal do time de RH',                      date: '2026-04-30', time: '11:00', priority: 'medium', category: 'RH',            recurrence: 'semanal', recurrenceDays: [5],     recurrenceDay: null, done: false, createdBy: 'Mariana Costa' },
+  { id: 9,  assigneeType: 'employee',   employeeId: 11, department: null,       title: 'Publicar conteúdo semanal nas redes sociais',        date: '2026-04-30', time: '10:00', priority: 'medium', category: 'Marketing',     recurrence: 'semanal', recurrenceDays: [1,4],   recurrenceDay: null, done: true,  createdBy: 'Mariana Costa' },
+
+  // ── Recorrentes mensais ─────────────────────────────────────────────────────
+  { id: 10, assigneeType: 'employee',   employeeId: 6,  department: null,       title: 'Conciliar extratos bancários do mês anterior',       date: '2026-04-30', time: '09:00', priority: 'high',   category: 'Financeiro',    recurrence: 'mensal',  recurrenceDays: null, recurrenceDay: 5,  done: false, createdBy: 'Mariana Costa' },
+  { id: 11, assigneeType: 'employee',   employeeId: 2,  department: null,       title: 'Fechar folha de ponto mensal e enviar para DP',      date: '2026-04-30', time: '12:00', priority: 'high',   category: 'RH',            recurrence: 'mensal',  recurrenceDays: null, recurrenceDay: 1,  done: false, createdBy: 'Mariana Costa' },
+  { id: 12, assigneeType: 'department', employeeId: null, department: 'TI',     title: 'Treinamento de segurança digital obrigatório',        date: '2026-04-30', time: '15:00', priority: 'high',   category: 'Segurança',     recurrence: 'mensal',  recurrenceDays: null, recurrenceDay: 15, done: false, createdBy: 'Mariana Costa' },
+  { id: 13, assigneeType: 'employee',   employeeId: 9,  department: null,       title: 'Fechar balancete contábil e enviar para revisão',    date: '2026-04-30', time: '10:00', priority: 'high',   category: 'Financeiro',    recurrence: 'mensal',  recurrenceDays: null, recurrenceDay: 3,  done: false, createdBy: 'Mariana Costa' },
+
+  // ── Únicas (pontuais) ──────────────────────────────────────────────────────
+  { id: 14, assigneeType: 'employee',   employeeId: 1,  department: null,       title: 'Ligar para cliente ABC — proposta Q2',               date: '2026-04-30', time: '09:00', priority: 'high',   category: 'Comercial',     recurrence: null, recurrenceDays: null, recurrenceDay: null, done: true,  createdBy: 'Mariana Costa' },
+  { id: 15, assigneeType: 'employee',   employeeId: 1,  department: null,       title: 'Enviar proposta comercial revisada — Empresa XYZ',   date: '2026-04-30', time: '10:30', priority: 'high',   category: 'Comercial',     recurrence: null, recurrenceDays: null, recurrenceDay: null, done: false, createdBy: 'Mariana Costa' },
+  { id: 16, assigneeType: 'employee',   employeeId: 2,  department: null,       title: 'Onboarding do novo funcionário Gabriel Mendes',      date: '2026-04-30', time: '09:00', priority: 'high',   category: 'RH',            recurrence: null, recurrenceDays: null, recurrenceDay: null, done: false, createdBy: 'Mariana Costa' },
+  { id: 17, assigneeType: 'employee',   employeeId: 5,  department: null,       title: 'Entregar protótipos do app para aprovação da diretoria', date: '2026-04-30', time: '11:00', priority: 'high', category: 'TI',           recurrence: null, recurrenceDays: null, recurrenceDay: null, done: true,  createdBy: 'Mariana Costa' },
+  { id: 18, assigneeType: 'employee',   employeeId: 5,  department: null,       title: 'Sessão de testes de usabilidade com usuários reais',  date: '2026-04-30', time: '14:00', priority: 'medium', category: 'TI',            recurrence: null, recurrenceDays: null, recurrenceDay: null, done: false, createdBy: 'Mariana Costa' },
+  { id: 19, assigneeType: 'employee',   employeeId: 4,  department: null,       title: 'Apresentação de resultados Q1 para diretoria',       date: '2026-04-30', time: '10:00', priority: 'high',   category: 'Administrativo',recurrence: null, recurrenceDays: null, recurrenceDay: null, done: false, createdBy: 'Mariana Costa' },
+  { id: 20, assigneeType: 'employee',   employeeId: 10, department: null,       title: 'Visita técnica ao cliente em Recife Centro',         date: '2026-04-30', time: '09:00', priority: 'high',   category: 'Comercial',     recurrence: null, recurrenceDays: null, recurrenceDay: null, done: false, createdBy: 'Mariana Costa' },
+  { id: 21, assigneeType: 'employee',   employeeId: 12, department: null,       title: 'Instalar atualização de segurança nos servidores',   date: '2026-05-02', time: '08:00', priority: 'high',   category: 'Segurança',     recurrence: null, recurrenceDays: null, recurrenceDay: null, done: false, createdBy: 'Mariana Costa' },
+  { id: 22, assigneeType: 'department', employeeId: null, department: 'Operações', title: 'Treinamento de CIPA e segurança no trabalho',     date: '2026-05-05', time: '13:00', priority: 'high',   category: 'Segurança',     recurrence: null, recurrenceDays: null, recurrenceDay: null, done: false, createdBy: 'Mariana Costa' },
+  { id: 23, assigneeType: 'employee',   employeeId: 11, department: null,       title: 'Análise de métricas da campanha de abril',           date: '2026-05-02', time: '15:00', priority: 'low',    category: 'Marketing',     recurrence: null, recurrenceDays: null, recurrenceDay: null, done: false, createdBy: 'Mariana Costa' },
+]
+
 export const REPORTS = [
   { id: 'overtime',    title: 'Horas Extras',      icon: 'Clock',      desc: 'Total de horas extras por funcionário no período selecionado.' },
   { id: 'bank',        title: 'Banco de Horas',    icon: 'Wallet',     desc: 'Saldo acumulado de banco de horas por colaborador.' },
