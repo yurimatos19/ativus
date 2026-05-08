@@ -110,9 +110,7 @@ export default function Sidebar({ collapsed, onToggle }) {
               <NavLink
                 key={to}
                 to={to}
-                // Mantemos o app mobile na mesma aba para navegação SPA.
-                // Se quiser voltar a abrir em nova aba depois, restaurar:
-                // target={to === '/app-mobile' ? '_blank' : undefined}
+                target={to === '/app-mobile' ? '_blank' : undefined}
                 className={({ isActive }) =>
                   [styles.navItem, isActive ? styles.active : ''].join(' ')
                 }

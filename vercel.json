@@ -1,9 +1,0 @@
-{
-  "_comment": "Regra de fallback SPA para React Router (BrowserRouter). Remover/ajustar no futuro se houver rotas server-side/API específicas.",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ]
-}
